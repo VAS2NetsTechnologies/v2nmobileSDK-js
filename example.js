@@ -1,16 +1,16 @@
 // example.js
-const V2NMobileSDK = require('./v2nmobile-sdk');
+const V2nmobile = require('./v2nmobile-sdk');
 
 // Replace with your actual V2NMobile API credentials
 const USERNAME = 'your_username';
 const PASSWORD = 'your_password';
 
-const sdk = new V2NMobileSDK(USERNAME, PASSWORD);
+const sdk = new V2nmobile(USERNAME, PASSWORD);
 
 async function runExample() {
   console.log('--- Getting User Details ---');
   try {
-    const userDetails = await sdk.getUserDetails();
+    const userDetails = await sdk.profile();
     console.log('User Details:', JSON.stringify(userDetails, null, 2));
   } catch (error) {
     console.error('Failed to get user details:', error.message);
@@ -35,7 +35,7 @@ async function runExample() {
   ];
 
   try {
-    const smsResult = await sdk.pushSMS(smsPayload);
+    const smsResult = await sdk.send(smsPayload);
     console.log('SMS Push Result:', JSON.stringify(smsResult, null, 2));
   } catch (error) {
     console.error('Failed to push SMS:', error.message);
@@ -53,15 +53,15 @@ async function runExample() {
   ];
 
   try {
-    await sdk.pushSMS(invalidSmsPayload);
+    await sdk.send(invalidSmsPayload);
   } catch (error) {
     console.error('Expected error for invalid SMS payload:', error.message);
   }
 
   console.log('\n--- Testing Invalid Credentials (simulated) ---');
-  const invalidSdk = new V2NMobileSDK('wrong_username', 'wrong_password');
+  const invalidSdk = new V2nmobile('wrong_username', 'wrong_password');
   try {
-    await invalidSdk.getUserDetails();
+    await invalidSdk.profile();
   } catch (error) {
     console.error('Expected error for invalid credentials:', error.message);
   }

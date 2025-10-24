@@ -1,9 +1,9 @@
 // v2nmobile-sdk.js
 
-class V2NMobileSDK {
+class V2nmobile {
   constructor(username, password) {
     if (!username || !password) {
-      throw new Error('V2NMobileSDK requires a username and password for Basic Authentication.');
+      throw new Error('V2nmobile requires a username and password for Basic Authentication.');
     }
     this.username = username;
     this.password = password;
@@ -18,7 +18,7 @@ class V2NMobileSDK {
     };
   }
 
-  async getUserDetails() {
+  async profile() {
     try {
       const response = await fetch(`${this.baseUrl}/info`, {
         method: 'GET',
@@ -40,7 +40,7 @@ class V2NMobileSDK {
     }
   }
 
-  async pushSMS(smsPayload) {
+  async send(smsPayload) {
     if (!Array.isArray(smsPayload) || smsPayload.length === 0) {
       throw new Error('SMS payload must be a non-empty array of SMS objects.');
     }
@@ -83,5 +83,5 @@ class V2NMobileSDK {
 
 // For Node.js environments, export the module
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = V2NMobileSDK;
+  module.exports = V2nmobile;
 }

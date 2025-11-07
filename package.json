@@ -1,0 +1,30 @@
+{
+  "name": "v2nmobile",
+  "version": "1.0.0",
+  "description": "A JavaScript SDK for interacting with the V2NMobile API, enabling developers to easily integrate SMS sending and user details retrieval into their applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node example.js"
+  },
+  "keywords": [
+    "sms",
+    "api",
+    "v2nmobile",
+    "sdk",
+    "javascript",
+    "node"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/v2nmobile-sdk-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/v2nmobile-sdk-js/issues"
+  },
+  "homepage": "https://github.com/yourusername/v2nmobile-sdk-js#readme"
+}

@@ -1,5 +1,5 @@
 // example.js
-const V2nmobile = require('./v2nmobile-sdk');
+const V2nmobile = require('./index');
 
 // Replace with your actual V2NMobile API credentials
 const USERNAME = 'your_username';

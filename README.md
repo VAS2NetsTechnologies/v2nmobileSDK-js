@@ -16,16 +16,13 @@ A JavaScript SDK for interacting with the V2NMobile API, enabling developers to 
 - Node.js (version 18 or higher recommended for native `fetch` support)
 - Valid V2NMobile API credentials (username and password)
 
-### Install via npm (if published)
+**Important Note**: This SDK is designed for Node.js backend environments only. Do not use it in client-side applications (e.g., browsers), as this would expose your V2NMobile API credentials.
+
+### Install via npm
 
 ```bash
 npm install v2nmobile
 ```
-
-### Manual Installation
-
-1. Download the `v2nmobile-sdk.js` file from the repository.
-2. Place it in your project directory.
 
 ## Usage
 
@@ -34,7 +31,7 @@ npm install v2nmobile
 First, import the SDK and create an instance with your API credentials:
 
 ```javascript
-const V2nmobile = require('./v2nmobile-sdk');
+const V2nmobile = require('v2nmobile');
 
 const sdk = new V2nmobile('your_username', 'your_password');
 ```
@@ -156,6 +153,17 @@ Sends SMS messages to the API.
 ## Examples
 
 See `example.js` in the repository for a complete example demonstrating all features, including error handling.
+
+## Publishing to npm
+
+To publish this package to npm:
+
+1. Ensure you have an npm account: `npm login`
+2. Update the package.json with your repository URL, author, etc.
+3. Run `npm publish` to publish the package.
+4. After publishing, developers can install it via `npm install v2nmobile`.
+
+Note: Choose a unique package name if "v2nmobile" is taken.
 
 ## Contributing
 
